@@ -4,6 +4,7 @@
   "description": "Generate type definition files for css or sass or less modules",
   "main": "dist/index.js",
   "type": "module",
+  "author": "zhangone",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +19,14 @@
     "src",
     "dist"
   ],
-  "author": "zhangone",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangone233/vite-plugin-gen-typed-css-modules"
+  },
+  "bugs": {
+    "url": "https://github.com/zhangone233/vite-plugin-gen-typed-css-modules/issues"
+  },
+  "homepage": "https://github.com/zhangone233/vite-plugin-gen-typed-css-modules/README.md",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.22.10",
