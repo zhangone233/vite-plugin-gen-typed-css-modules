@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-gen-typed-css-modules",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate type definition files for css or sass or less modules",
   "main": "dist/index.js",
   "type": "module",
@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/zhangone233/vite-plugin-gen-typed-css-modules/issues"
   },
-  "homepage": "https://github.com/zhangone233/vite-plugin-gen-typed-css-modules/README.md",
+  "homepage": "https://github.com/zhangone233/vite-plugin-gen-typed-css-modules#readme",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.22.10",
