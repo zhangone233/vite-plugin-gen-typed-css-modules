@@ -27,15 +27,17 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
+          run_install: true
 
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.org/
           cache: 'pnpm'
-
+  
       - name: Set registry url
-        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
+        run: |
+          pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
+          pnpm config set registry https://registry.npmjs.org/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
@@ -44,10 +46,13 @@ jobs:
           echo "Current Directory: $(pwd)"
           echo "Git Head: $(git rev-parse HEAD)"
           echo "Git Branches: $(git branch -a)"
+          echo "Current Registry: $(pnpm config get registry)"
+      
+      - name: Remove .npmrc file
+        run: rm .npmrc
 
       - name: Publish to npm
         run: |
-          pnpm install
           pnpm run build
           pnpm publish --tag latest --access=public --no-git-checks
         env:
