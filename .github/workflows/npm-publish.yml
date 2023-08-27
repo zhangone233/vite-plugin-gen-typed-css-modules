@@ -59,6 +59,12 @@ jobs:
       # - name: Install pnpm
       #   run: npm install -g pnpm
 
+      - name: Display Environment
+        run: |
+          echo "Current Directory: $(pwd)"
+          echo "Git Head: $(git rev-parse HEAD)"
+          echo "Git Branches: $(git branch -a)"
+
       - name: Publish to npm
         run: |
           pnpm install
